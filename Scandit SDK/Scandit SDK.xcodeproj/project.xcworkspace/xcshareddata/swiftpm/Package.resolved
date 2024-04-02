@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "datacapture-spm",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Scandit/datacapture-spm",
+      "state" : {
+        "revision" : "ffcd6fcfce741d1292bfb683ea3a2a7778fe589f",
+        "version" : "6.23.0"
+      }
+    }
+  ],
+  "version" : 2
+}

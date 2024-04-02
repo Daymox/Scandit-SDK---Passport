@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z8I-gG-ho3">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Scandit_SDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="passport" translatesAutoresizingMaskIntoConstraints="NO" id="h4o-AK-aHx">
+                                <rect key="frame" x="95" y="233" width="203" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="BDC-MQ-rYj"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvg-Lz-u6l">
+                                <rect key="frame" x="90" y="508" width="213" height="44"/>
+                                <color key="tintColor" red="0.40392156862745099" green="0.77647058823529413" blue="0.8901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Escanear MRZ">
+                                    <fontDescription key="titleFontDescription" name="Menlo-Regular" family="Menlo" pointSize="25"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="scanMRZ:" destination="BYZ-38-t0r" eventType="touchUpInside" id="P2k-Ui-1NE"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="veritran" translatesAutoresizingMaskIntoConstraints="NO" id="WdT-Mz-X3n">
+                                <rect key="frame" x="96" y="778" width="200" height="40"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jvg-Lz-u6l" secondAttribute="trailing" constant="90" id="BTE-tV-ezJ"/>
+                            <constraint firstItem="Jvg-Lz-u6l" firstAttribute="top" secondItem="h4o-AK-aHx" secondAttribute="bottom" constant="75" id="FwQ-hZ-bzT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WdT-Mz-X3n" secondAttribute="trailing" constant="97" id="ZCb-eP-jFC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="h4o-AK-aHx" secondAttribute="trailing" constant="95" id="a42-P7-dOc"/>
+                            <constraint firstItem="h4o-AK-aHx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="95" id="aMz-QX-s9E"/>
+                            <constraint firstItem="h4o-AK-aHx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="130" id="dTm-4s-fdK"/>
+                            <constraint firstItem="WdT-Mz-X3n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="96" id="iJ5-1X-Fw3"/>
+                            <constraint firstItem="Jvg-Lz-u6l" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="90" id="qy4-55-Cn7"/>
+                            <constraint firstItem="WdT-Mz-X3n" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="yHs-W5-dtm"/>
+                            <constraint firstItem="WdT-Mz-X3n" firstAttribute="top" secondItem="Jvg-Lz-u6l" secondAttribute="bottom" constant="226" id="z7j-fc-c6g"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="77E-LA-fr6"/>
+                    <connections>
+                        <segue destination="gi0-rJ-XXz" kind="show" identifier="showCaptureData" id="yLM-8j-0v6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1052.6717557251909" y="-28.169014084507044"/>
+        </scene>
+        <!--Capture Data-->
+        <scene sceneID="aY9-99-VVy">
+            <objects>
+                <viewController id="gi0-rJ-XXz" customClass="CaptureData" customModule="Scandit_SDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MNV-VQ-hlW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="9Es-58-8sH"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7vx-Qb-36n"/>
+                    <connections>
+                        <segue destination="nRf-5g-eLZ" kind="show" identifier="showDetailScan" id="Sx0-WK-aDW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lxj-PQ-wTS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1901.5267175572519" y="-28.169014084507044"/>
+        </scene>
+        <!--Scan Details-->
+        <scene sceneID="A95-W1-TVm">
+            <objects>
+                <viewController id="nRf-5g-eLZ" customClass="ScanDetails" customModule="Scandit_SDK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xs0-Io-gsG">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detalles del Documento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tLw-so-wmm">
+                                <rect key="frame" x="20" y="153" width="332" height="30"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="25"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre Completo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KY6-Re-NWk">
+                                <rect key="frame" x="20" y="228" width="145" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="16"/>
+                                <color key="textColor" red="0.40392156862745099" green="0.77647058823529413" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxxxxxxxx" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtJ-T3-BSr">
+                                <rect key="frame" x="276.66666666666669" y="228" width="96.333333333333314" height="18.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="País" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Jc-XK-UNV">
+                                <rect key="frame" x="20" y="292" width="39" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="16"/>
+                                <color key="textColor" red="0.4039215686" green="0.77647058820000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxxxxxxxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zlg-8I-jyE">
+                                <rect key="frame" x="276.66666666666669" y="291.66666666666669" width="96.333333333333314" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Documento #1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gng-6B-hsQ">
+                                <rect key="frame" x="40" y="341" width="116" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="16"/>
+                                <color key="textColor" red="0.4039215686" green="0.77647058820000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# Documento" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAc-wU-Qvm">
+                                <rect key="frame" x="247" y="340.66666666666669" width="106" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="16"/>
+                                <color key="textColor" red="0.4039215686" green="0.77647058820000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxxxxxxxx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hv-uE-0Uu">
+                                <rect key="frame" x="39.999999999999993" y="375" width="96.333333333333314" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxxxxxxxx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d0o-ni-Qfa">
+                                <rect key="frame" x="256.66666666666669" y="374.66666666666669" width="96.333333333333314" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Documento #2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHW-uP-Dro">
+                                <rect key="frame" x="40" y="488" width="116" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="16"/>
+                                <color key="textColor" red="0.4039215686" green="0.77647058820000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# Documento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vo-it-EhX">
+                                <rect key="frame" x="247" y="487.66666666666669" width="106" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="16"/>
+                                <color key="textColor" red="0.4039215686" green="0.77647058820000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxxxxxxxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyb-4b-DCO">
+                                <rect key="frame" x="39.999999999999993" y="522" width="96.333333333333314" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxxxxxxxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhH-ll-Udh">
+                                <rect key="frame" x="256.66666666666669" y="521.66666666666663" width="96.333333333333314" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sexo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7yy-CY-wZ1">
+                                <rect key="frame" x="20" y="635" width="39" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="16"/>
+                                <color key="textColor" red="0.4039215686" green="0.77647058820000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxxxxxxxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtX-Qy-9w0">
+                                <rect key="frame" x="276.66666666666669" y="634.66666666666663" width="96.333333333333314" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha de Ex." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6u-GN-V1K">
+                                <rect key="frame" x="40" y="424" width="116" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="16"/>
+                                <color key="textColor" red="0.4039215686" green="0.77647058820000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxxxxxxxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEL-y8-seu">
+                                <rect key="frame" x="256.66666666666669" y="423.66666666666669" width="96.333333333333314" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha de Na." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8T8-je-xQs">
+                                <rect key="frame" x="40" y="571" width="116" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="16"/>
+                                <color key="textColor" red="0.4039215686" green="0.77647058820000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxxxxxxxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTs-Ne-J4y">
+                                <rect key="frame" x="256.66666666666669" y="570.66666666666663" width="96.333333333333314" height="19"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kg-Ck-jqS">
+                                <rect key="frame" x="20" y="699" width="353" height="37.333333333333371"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Y0v-36-vZy"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SAc-wU-Qvm" firstAttribute="top" secondItem="Zlg-8I-jyE" secondAttribute="bottom" constant="30" id="0Bh-uk-fEw"/>
+                            <constraint firstItem="5vo-it-EhX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xHW-uP-Dro" secondAttribute="trailing" constant="8" symbolic="YES" id="1vg-1w-42Y"/>
+                            <constraint firstItem="8T8-je-xQs" firstAttribute="leading" secondItem="Y0v-36-vZy" secondAttribute="leading" constant="40" id="2vq-B6-aC0"/>
+                            <constraint firstItem="Y0v-36-vZy" firstAttribute="trailing" secondItem="8kg-Ck-jqS" secondAttribute="trailing" constant="20" id="3Hm-Cf-xia"/>
+                            <constraint firstItem="7yy-CY-wZ1" firstAttribute="top" secondItem="8T8-je-xQs" secondAttribute="bottom" constant="45" id="3qX-41-3wM"/>
+                            <constraint firstItem="SAc-wU-Qvm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gng-6B-hsQ" secondAttribute="trailing" constant="8" symbolic="YES" id="5HS-5B-vD5"/>
+                            <constraint firstItem="CEL-y8-seu" firstAttribute="top" secondItem="d0o-ni-Qfa" secondAttribute="bottom" constant="30" id="5ND-Q3-NcQ"/>
+                            <constraint firstItem="d0o-ni-Qfa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1hv-uE-0Uu" secondAttribute="trailing" constant="80" id="6wb-V1-baT"/>
+                            <constraint firstItem="Y0v-36-vZy" firstAttribute="trailing" secondItem="5vo-it-EhX" secondAttribute="trailing" constant="40" id="8ri-Ma-osx"/>
+                            <constraint firstItem="Q6u-GN-V1K" firstAttribute="top" secondItem="1hv-uE-0Uu" secondAttribute="bottom" constant="30" id="BAC-yC-5WA"/>
+                            <constraint firstItem="tLw-so-wmm" firstAttribute="leading" secondItem="Y0v-36-vZy" secondAttribute="leading" constant="20" id="Baz-HG-QTt"/>
+                            <constraint firstItem="GTs-Ne-J4y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8T8-je-xQs" secondAttribute="trailing" constant="80" id="D9b-8X-b5B"/>
+                            <constraint firstItem="Y0v-36-vZy" firstAttribute="trailing" secondItem="AtJ-T3-BSr" secondAttribute="trailing" constant="20" id="DGf-3O-aod"/>
+                            <constraint firstItem="d0o-ni-Qfa" firstAttribute="top" secondItem="SAc-wU-Qvm" secondAttribute="bottom" constant="15" id="E80-ZZ-FIx"/>
+                            <constraint firstItem="kyb-4b-DCO" firstAttribute="top" secondItem="xHW-uP-Dro" secondAttribute="bottom" constant="15" id="F7t-pE-dcm"/>
+                            <constraint firstItem="Y0v-36-vZy" firstAttribute="trailing" secondItem="SAc-wU-Qvm" secondAttribute="trailing" constant="40" id="G6Z-lx-hjC"/>
+                            <constraint firstItem="0Jc-XK-UNV" firstAttribute="top" secondItem="KY6-Re-NWk" secondAttribute="bottom" constant="45" id="Hq6-xA-5lV"/>
+                            <constraint firstItem="Y0v-36-vZy" firstAttribute="trailing" secondItem="Zlg-8I-jyE" secondAttribute="trailing" constant="20" id="IXp-78-CCy"/>
+                            <constraint firstItem="qhH-ll-Udh" firstAttribute="top" secondItem="5vo-it-EhX" secondAttribute="bottom" constant="15" id="KON-0h-Sax"/>
+                            <constraint firstItem="qhH-ll-Udh" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="kyb-4b-DCO" secondAttribute="trailing" constant="80" id="LGQ-4T-nSS"/>
+                            <constraint firstItem="KY6-Re-NWk" firstAttribute="top" secondItem="tLw-so-wmm" secondAttribute="bottom" constant="45" id="NAu-89-VII"/>
+                            <constraint firstItem="CEL-y8-seu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Q6u-GN-V1K" secondAttribute="trailing" constant="80" id="OQz-oT-X0q"/>
+                            <constraint firstItem="7yy-CY-wZ1" firstAttribute="leading" secondItem="Y0v-36-vZy" secondAttribute="leading" constant="20" id="PD8-aC-dzy"/>
+                            <constraint firstItem="xHW-uP-Dro" firstAttribute="top" secondItem="Q6u-GN-V1K" secondAttribute="bottom" constant="45" id="Svj-1u-dy9"/>
+                            <constraint firstItem="KY6-Re-NWk" firstAttribute="leading" secondItem="Y0v-36-vZy" secondAttribute="leading" constant="20" id="Wmp-Sx-0c0"/>
+                            <constraint firstItem="Y0v-36-vZy" firstAttribute="trailing" secondItem="d0o-ni-Qfa" secondAttribute="trailing" constant="40" id="XsD-hc-pY7"/>
+                            <constraint firstItem="Zlg-8I-jyE" firstAttribute="top" secondItem="AtJ-T3-BSr" secondAttribute="bottom" constant="45" id="XwL-Mu-Pwo"/>
+                            <constraint firstItem="tLw-so-wmm" firstAttribute="top" secondItem="Y0v-36-vZy" secondAttribute="top" constant="50" id="ZZC-o2-88t"/>
+                            <constraint firstItem="1hv-uE-0Uu" firstAttribute="leading" secondItem="Y0v-36-vZy" secondAttribute="leading" constant="40" id="eXx-ht-KdT"/>
+                            <constraint firstItem="gng-6B-hsQ" firstAttribute="top" secondItem="0Jc-XK-UNV" secondAttribute="bottom" constant="30" id="fc9-PD-fsk"/>
+                            <constraint firstItem="1hv-uE-0Uu" firstAttribute="top" secondItem="gng-6B-hsQ" secondAttribute="bottom" constant="15" id="iPn-8S-E9S"/>
+                            <constraint firstItem="8kg-Ck-jqS" firstAttribute="leading" secondItem="Y0v-36-vZy" secondAttribute="leading" constant="20" id="kLJ-Mb-gYE"/>
+                            <constraint firstItem="GTs-Ne-J4y" firstAttribute="top" secondItem="qhH-ll-Udh" secondAttribute="bottom" constant="30" id="lB7-wZ-U55"/>
+                            <constraint firstItem="8kg-Ck-jqS" firstAttribute="top" secondItem="7yy-CY-wZ1" secondAttribute="bottom" constant="45" id="lYs-oF-Z00"/>
+                            <constraint firstItem="dtX-Qy-9w0" firstAttribute="top" secondItem="GTs-Ne-J4y" secondAttribute="bottom" constant="45" id="mkl-yM-EbK"/>
+                            <constraint firstItem="Zlg-8I-jyE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Jc-XK-UNV" secondAttribute="trailing" constant="30" id="nKl-MR-qVP"/>
+                            <constraint firstItem="Y0v-36-vZy" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tLw-so-wmm" secondAttribute="trailing" symbolic="YES" id="o4L-w1-fAE"/>
+                            <constraint firstItem="5vo-it-EhX" firstAttribute="top" secondItem="CEL-y8-seu" secondAttribute="bottom" constant="45" id="pE1-hj-gXx"/>
+                            <constraint firstItem="gng-6B-hsQ" firstAttribute="leading" secondItem="Y0v-36-vZy" secondAttribute="leading" constant="40" id="pcj-Ct-aaP"/>
+                            <constraint firstItem="xHW-uP-Dro" firstAttribute="leading" secondItem="Y0v-36-vZy" secondAttribute="leading" constant="40" id="qU1-3I-P1F"/>
+                            <constraint firstItem="Y0v-36-vZy" firstAttribute="trailing" secondItem="GTs-Ne-J4y" secondAttribute="trailing" constant="40" id="re6-F5-SJ3"/>
+                            <constraint firstItem="kyb-4b-DCO" firstAttribute="leading" secondItem="Y0v-36-vZy" secondAttribute="leading" constant="40" id="sqo-ot-aYQ"/>
+                            <constraint firstItem="dtX-Qy-9w0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="7yy-CY-wZ1" secondAttribute="trailing" constant="8" symbolic="YES" id="tdF-yR-zIe"/>
+                            <constraint firstItem="Y0v-36-vZy" firstAttribute="trailing" secondItem="qhH-ll-Udh" secondAttribute="trailing" constant="40" id="u3j-Re-KlY"/>
+                            <constraint firstItem="Q6u-GN-V1K" firstAttribute="leading" secondItem="Y0v-36-vZy" secondAttribute="leading" constant="40" id="u9F-1h-aJp"/>
+                            <constraint firstItem="8T8-je-xQs" firstAttribute="top" secondItem="kyb-4b-DCO" secondAttribute="bottom" constant="30" id="wAN-kW-1gt"/>
+                            <constraint firstItem="AtJ-T3-BSr" firstAttribute="top" secondItem="tLw-so-wmm" secondAttribute="bottom" constant="45" id="xHv-xl-ldX"/>
+                            <constraint firstItem="Y0v-36-vZy" firstAttribute="trailing" secondItem="dtX-Qy-9w0" secondAttribute="trailing" constant="20" id="xI3-Ve-poF"/>
+                            <constraint firstItem="Y0v-36-vZy" firstAttribute="trailing" secondItem="CEL-y8-seu" secondAttribute="trailing" constant="40" id="xae-XD-DG6"/>
+                            <constraint firstItem="AtJ-T3-BSr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KY6-Re-NWk" secondAttribute="trailing" constant="30" id="zJ1-r8-fDZ"/>
+                            <constraint firstItem="0Jc-XK-UNV" firstAttribute="leading" secondItem="Y0v-36-vZy" secondAttribute="leading" constant="20" id="zXz-pw-rvQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1cA-ZD-crK"/>
+                    <connections>
+                        <outlet property="birthDateLabel" destination="GTs-Ne-J4y" id="jGj-38-ide"/>
+                        <outlet property="countryLabel" destination="Zlg-8I-jyE" id="yOL-NL-UrS"/>
+                        <outlet property="documentNumberLabel" destination="d0o-ni-Qfa" id="OK3-NZ-XDx"/>
+                        <outlet property="documentTypeLabel" destination="1hv-uE-0Uu" id="Q3E-LO-IaD"/>
+                        <outlet property="expirationDateLabel" destination="CEL-y8-seu" id="fgT-WF-OE5"/>
+                        <outlet property="fullNameLabel" destination="AtJ-T3-BSr" id="VtG-Wn-f5I"/>
+                        <outlet property="mrzCode" destination="8kg-Ck-jqS" id="tW8-ZN-76z"/>
+                        <outlet property="optionalLabel" destination="kyb-4b-DCO" id="zRl-Ar-oq9"/>
+                        <outlet property="sexLabel" destination="dtX-Qy-9w0" id="XXA-AM-lsW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghz-Tp-sAk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2797.709923664122" y="-28.169014084507044"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Zxp-bK-yNa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Z8I-gG-ho3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MVS-k0-UcK">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="g6A-YX-Zjb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="12J-C5-8ab" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-28.169014084507044"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="passport" width="512" height="512"/>
+        <image name="veritran" width="3113" height="721"/>
+    </resources>
+</document>
